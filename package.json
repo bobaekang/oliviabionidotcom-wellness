@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/bobaekang/olivia-bioni-wellness-website/issues"
   },
-  "homepage": "https://github.com/bobaekang/olivia-bioni-wellness-website#readme"
+  "homepage": "https://github.com/bobaekang/olivia-bioni-wellness-website#readme",
+  "devDependencies": {
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
 }

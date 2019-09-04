@@ -18,6 +18,36 @@ module.exports = {
         exclude: [
           /node_modules/
         ]
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true
+          }
+        }
+      },
+      {
+        test: /\.(ico|gif|png|jpe?g|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            context: './src'     
+          }
+        }
       }
     ]
   }

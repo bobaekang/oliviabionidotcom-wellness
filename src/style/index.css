@@ -2,4 +2,12 @@
 
 @tailwind components;
 
+.header {
+    @apply flex flex-wrap justify-center items-center;
+}
+
+.header img {
+    height: 60px;
+}
+
 @tailwind utilities;

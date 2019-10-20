@@ -23,6 +23,11 @@
     border-color: var(--color-primary-light);
 }
 
+.footer {
+    @apply flex flex-wrap content-center mx-auto ;
+    min-height: 120px;
+}
+
 .header {
     @apply flex flex-wrap justify-center items-center;
 }

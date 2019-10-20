@@ -110,6 +110,10 @@
     right: 0;
 }
 
+.header-hide {
+    top: -75px;
+}
+
 .section {
     @apply flex flex-wrap justify-between items-center mx-auto px-6 py-16;
     min-height: 420px;
@@ -227,7 +231,7 @@
     .section-top .content {
         @apply text-left w-1/2;
     }
-    
+
     .section-tagline {
         @apply text-5xl;
     }

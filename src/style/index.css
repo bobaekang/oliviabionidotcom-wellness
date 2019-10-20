@@ -92,6 +92,14 @@
     min-height: 420px;
 }
 
+.section .content {
+    @apply text-center w-full;
+}
+
+.section .content img {
+    @apply mx-auto;
+}
+
 .section-blurb {
     @apply font-light pb-4 text-gray-600 text-lg;
 }
@@ -107,14 +115,6 @@
 
 .section-top {
     min-height: 720px;
-}
-
-.section-top .content {
-    @apply text-center w-full;
-}
-
-.section-top .content img {
-    @apply mx-auto;
 }
 
 .section-top .section-tagline {

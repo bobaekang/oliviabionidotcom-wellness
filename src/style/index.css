@@ -8,12 +8,44 @@
 
 @tailwind components;
 
+.btn {
+    @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
+}
+
+.btn-outline {
+    @apply border;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+}
+
 .header {
     @apply flex flex-wrap justify-center items-center;
 }
 
 .header img {
     height: 60px;
+}
+
+.header-fixed {
+    @apply bg-white fixed shadow w-full py-2;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+}
+
+.header-fixed img {
+    height: 45px;
+}
+
+.header-fixed .btn {
+    @apply mx-2 my-0 px-2 py-3;
+    font-size: .6em;
+    position: fixed;
+    right: 0;
 }
 
 @tailwind utilities;

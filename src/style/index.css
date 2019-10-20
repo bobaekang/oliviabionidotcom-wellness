@@ -32,6 +32,31 @@
     border-color: var(--color-primary-light);
 }
 
+.card {
+    @apply w-full border border-gray-300 text-center m-4;
+    max-width: 300px;
+    min-height: 300px;
+    transition: transform .5s, box-shadow .5s;
+}
+
+.card:hover {
+    @apply shadow-xl;
+    transform: scale3d(1.006, 1.006, 1);
+}
+
+.card img {
+    @apply mx-auto mt-2;
+    width: 80% !important;
+}
+
+.card div {
+    @apply mt-4 text-lg text-gray-600;
+}
+
+.card-container {
+    @apply flex flex-wrap w-full items-center justify-center py-6 mx-auto;
+}
+
 .footer {
     @apply flex flex-wrap content-center mx-auto ;
     min-height: 120px;
@@ -69,6 +94,10 @@
 
 .section-blurb {
     @apply font-light pb-4 text-gray-600 text-lg;
+}
+
+.section-classes {
+    @apply block text-center;
 }
 
 .section-tagline {

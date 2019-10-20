@@ -12,6 +12,15 @@
     @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
 }
 
+.btn-fill {
+    @apply text-white;
+    background-color: var(--color-primary);
+}
+
+.btn-fill:hover {
+    background-color: var(--color-primary-light);
+}
+
 .btn-outline {
     @apply border;
     color: var(--color-primary);
@@ -51,6 +60,40 @@
     font-size: .6em;
     position: fixed;
     right: 0;
+}
+
+.section {
+    @apply flex flex-wrap justify-between items-center mx-auto px-6 py-16;
+    min-height: 420px;
+}
+
+.section-blurb {
+    @apply font-light pb-4 text-gray-600 text-lg;
+}
+
+.section-tagline {
+    @apply font-light leading-tight pb-4 text-3xl;
+    color: var(--color-primary-dark);
+}
+
+.section-top {
+    min-height: 720px;
+}
+
+.section-top .content {
+    @apply text-center w-full;
+}
+
+.section-top .content img {
+    @apply mx-auto;
+}
+
+.section-top .section-tagline {
+    @apply text-4xl;
+}
+
+.section-top .btn {
+    @apply mx-auto;
 }
 
 @tailwind utilities;

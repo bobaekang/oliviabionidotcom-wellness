@@ -17,3 +17,7 @@
 }
 
 @tailwind utilities;
+
+body {
+    font-family: 'Overpass', sans-serif;
+}

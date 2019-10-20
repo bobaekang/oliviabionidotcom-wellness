@@ -154,6 +154,89 @@
 
 @tailwind utilities;
 
+@screen sm {
+    .header-fixed .btn {
+        @apply mx-6 px-3;
+        font-size: .8em;
+    }
+
+    .section {
+        @apply py-20;
+    }    
+}
+
+@screen md {
+    .card {
+        @apply w-1/3 m-6;
+    }
+
+    .card-container {
+        @apply pt-10;
+    }
+
+    .header img {
+        height: 120px;
+    }
+    
+    .header-fixed img {
+        height: 60px;
+    }
+
+    .header-fixed .btn {
+        @apply mx-10;
+    }
+
+    .section {
+        @apply py-24;
+    }
+
+    .section .content {
+        @apply w-1/2 px-2 text-left;
+    }
+
+    .section-blurb {
+        @apply text-xl;
+    }
+
+    .section-group {
+        @apply flex-row-reverse;
+    }
+
+    .section-group .content {
+        @apply text-right;
+    }
+
+    .section-tagline {
+        @apply text-4xl;
+    }
+
+    .section-top .content {
+        @apply text-center w-full my-2;
+    }
+
+    .section-top .section-tagline {
+        @apply text-5xl;
+    }
+
+    .section-top .section-blurb {
+        @apply pb-12;
+    }
+}
+
+@screen xl {
+    .section-top .content {
+        @apply text-left w-1/2;
+    }
+    
+    .section-tagline {
+        @apply text-5xl;
+    }
+
+    .section-top .section-tagline {
+        @apply text-6xl;
+    }
+}
+
 body {
     font-family: 'Overpass', sans-serif;
 }

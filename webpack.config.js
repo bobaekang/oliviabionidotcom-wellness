@@ -1,6 +1,8 @@
 const path = require('path')
+const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -34,12 +36,12 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
+              indent: 'postcss',
               plugins: [
                 require('tailwindcss'),
                 require('autoprefixer')
-              ],
-            },
+              ]
+            }
           },
         ],
       },
@@ -72,5 +74,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
+    new PurgecssPlugin({
+      paths: glob.sync([
+        path.join(__dirname, '/src/**/*.html'),
+        path.join(__dirname, '/src/*.js')
+      ])
+    }),
+    
   ]
 }

@@ -69,7 +69,15 @@ module.exports = {
   plugins: [ 
     new HtmlWebpackPlugin({
         template: path.join(__dirname, '/src/index.html'),
-        inject: 'body'
+        inject: 'body',
+        minify: {
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        }
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -79,7 +87,6 @@ module.exports = {
         path.join(__dirname, '/src/**/*.html'),
         path.join(__dirname, '/src/*.js')
       ])
-    }),
-    
+    })   
   ]
 }

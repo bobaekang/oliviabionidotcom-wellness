@@ -12,6 +12,11 @@
     @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
 }
 
+#contact .btn {
+    @apply border;
+    border-color: var(--color-primary-light);
+}
+
 #contact .btn:hover {
     background-color: var(--color-primary-light);
 }
@@ -49,7 +54,7 @@
 }
 
 .card img {
-    @apply mx-auto mt-2;
+    @apply mx-auto pt-8;
     width: 80% !important;
 }
 
@@ -62,8 +67,8 @@
 }
 
 .footer {
-    @apply flex flex-wrap content-center mx-auto ;
-    min-height: 120px;
+    @apply flex flex-wrap justify-center content-center mx-auto px-6;
+    min-height: 80px;
 }
 
 .header {
@@ -75,7 +80,7 @@
 }
 
 .header-fixed {
-    @apply bg-white fixed shadow w-full py-2;
+    @apply bg-white fixed shadow w-full py-2 z-50;
     top: 0;
     transition: top 0.2s ease-in-out;
 }
@@ -176,7 +181,7 @@
     }
 
     .section .content {
-        @apply w-1/2 px-2 text-left;
+        @apply w-1/2 px-8 text-left;
     }
 
     .section-blurb {
@@ -210,7 +215,11 @@
 
 @screen xl {
     .section-top .content {
-        @apply text-left w-1/2;
+        @apply text-left w-2/5;
+    }
+
+    .section-top .content-img {
+        @apply text-left w-3/5;
     }
 
     .section-tagline {

@@ -1,236 +1,255 @@
 :root {
-    --color-primary: #c27ba0;
-    --color-primary-dark: #4c1130;
-    --color-primary-light: #d7a8c0;
+  --color-primary: #c27ba0;
+  --color-primary-dark: #4c1130;
+  --color-primary-light: #d7a8c0;
 }
 
 @tailwind base;
 
 @tailwind components;
 
+.badge-container {
+  @apply flex flex-wrap w-full items-center justify-center mx-auto;
+}
+
+.badge-container img {
+  @apply m-6;
+  max-width: 150px;
+}
+
 .btn {
-    @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
+  @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
 }
 
 #contact .btn {
-    @apply border;
-    border-color: var(--color-primary-light);
+  @apply border;
+  border-color: var(--color-primary-light);
 }
 
 #contact .btn:hover {
-    background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light);
 }
 
 .btn-fill {
-    @apply text-white;
-    background-color: var(--color-primary);
+  @apply text-white;
+  background-color: var(--color-primary);
 }
 
 .btn-fill:hover {
-    background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light);
 }
 
 .btn-outline {
-    @apply border;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+  @apply border;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn-outline:hover {
-    color: var(--color-primary-light);
-    border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
 }
 
 .card {
-    @apply w-full border border-gray-300 text-center m-4;
-    max-width: 300px;
-    min-height: 300px;
-    transition: transform .5s, box-shadow .5s;
+  @apply w-full border border-gray-300 text-center m-4;
+  max-width: 300px;
+  min-height: 300px;
+  transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .card:hover {
-    @apply shadow-xl;
-    transform: scale3d(1.006, 1.006, 1);
+  @apply shadow-xl;
+  transform: scale3d(1.006, 1.006, 1);
 }
 
 .card img {
-    @apply mx-auto pt-8;
-    width: 80% !important;
+  @apply mx-auto pt-8;
+  width: 80% !important;
 }
 
 .card div {
-    @apply mt-4 text-lg text-gray-600;
+  @apply mt-4 text-lg text-gray-600;
 }
 
 .card-container {
-    @apply flex flex-wrap w-full items-center justify-center py-6 mx-auto;
+  @apply flex flex-wrap w-full items-center justify-center py-6 mx-auto;
 }
 
 .footer {
-    @apply flex flex-wrap justify-center content-center mx-auto px-6;
-    min-height: 80px;
+  @apply flex flex-wrap justify-center content-center mx-auto px-6;
+  min-height: 80px;
 }
 
 .header {
-    @apply flex flex-wrap justify-center items-center;
+  @apply flex flex-wrap justify-center items-center;
 }
 
 .header img {
-    height: 60px;
+  height: 60px;
 }
 
 .header-fixed {
-    @apply bg-white fixed shadow w-full py-2 z-50;
-    top: 0;
-    transition: top 0.2s ease-in-out;
+  @apply bg-white fixed shadow w-full py-2 z-50;
+  top: 0;
+  transition: top 0.2s ease-in-out;
 }
 
 .header-fixed img {
-    height: 45px;
+  height: 45px;
 }
 
 .header-fixed .btn {
-    @apply mx-2 my-0 px-2 py-3;
-    font-size: .6em;
-    position: fixed;
-    right: 0;
+  @apply mx-2 my-0 px-2 py-3;
+  font-size: 0.6em;
+  position: fixed;
+  right: 0;
 }
 
 .header-hide {
-    top: -75px;
+  top: -75px;
 }
 
 .section {
-    @apply flex flex-wrap justify-between items-center mx-auto px-6 py-16;
-    min-height: 420px;
+  @apply flex flex-wrap justify-between items-center mx-auto px-6 py-16;
+  min-height: 420px;
 }
 
 .section .content {
-    @apply text-center w-full;
+  @apply text-center w-full;
 }
 
 .section .content img {
-    @apply mx-auto;
+  @apply mx-auto;
+}
+
+.section-badge {
+  padding: 0 !important;
+  min-height: 0;
 }
 
 .section-blurb {
-    @apply font-light pb-4 text-gray-600 text-lg;
+  @apply font-light pb-4 text-gray-600 text-lg;
 }
 
 .section-classes {
-    @apply block text-center;
+  @apply block text-center;
 }
 
 .section-contact {
-    background-color: var(--color-primary);
+  background-color: var(--color-primary);
 }
 
 .section-tagline {
-    @apply font-light leading-tight pb-4 text-3xl;
-    color: var(--color-primary-dark);
+  @apply font-light leading-tight pb-4 text-3xl;
+  color: var(--color-primary-dark);
 }
 
 .section-top {
-    min-height: 720px;
+  min-height: 720px;
 }
 
 .section-top .section-tagline {
-    @apply text-4xl;
+  @apply text-4xl;
 }
 
 .section-top .btn {
-    @apply mx-auto;
+  @apply mx-auto;
 }
 
 @tailwind utilities;
 
 @screen sm {
-    .header-fixed .btn {
-        @apply mx-6 px-3;
-        font-size: .8em;
-    }
+  .header-fixed .btn {
+    @apply mx-6 px-3;
+    font-size: 0.8em;
+  }
 
-    .section {
-        @apply py-20;
-    }    
+  .section {
+    @apply py-20;
+  }
 }
 
 @screen md {
-    .card {
-        @apply w-1/3 m-6;
-    }
+  .card {
+    @apply w-1/3 m-6;
+  }
 
-    .card-container {
-        @apply pt-10;
-    }
+  .card-container {
+    @apply pt-10;
+  }
 
-    .header img {
-        height: 120px;
-    }
-    
-    .header-fixed img {
-        height: 60px;
-    }
+  .header img {
+    height: 120px;
+  }
 
-    .header-fixed .btn {
-        @apply mx-10;
-    }
+  .header-fixed img {
+    height: 60px;
+  }
 
-    .section {
-        @apply py-24;
-    }
+  .header-fixed .btn {
+    @apply mx-10;
+  }
 
-    .section .content {
-        @apply w-1/2 px-8 text-left;
-    }
+  .section {
+    @apply py-24;
+  }
 
-    .section-blurb {
-        @apply text-xl;
-    }
+  .section .content {
+    @apply w-1/2 px-8 text-left;
+  }
 
-    .section-group {
-        @apply flex-row-reverse;
-    }
+  .section-blurb {
+    @apply text-xl;
+  }
 
-    .section-group .content {
-        @apply text-right;
-    }
+  .section-group {
+    @apply flex-row-reverse;
+  }
 
-    .section-tagline {
-        @apply text-4xl;
-    }
+  .section-group .content {
+    @apply text-right;
+  }
 
-    .section-top .content {
-        @apply text-center w-full my-2;
-    }
+  .section-tagline {
+    @apply text-4xl;
+  }
 
-    .section-top .section-tagline {
-        @apply text-5xl;
-    }
+  .section-top .content {
+    @apply text-center w-full my-2;
+  }
 
-    .section-top .section-blurb {
-        @apply pb-12;
-    }
+  .section-top .section-tagline {
+    @apply text-5xl;
+  }
+
+  .section-top .section-blurb {
+    @apply pb-12;
+  }
 }
 
 @screen xl {
-    .section-top .content {
-        @apply text-left w-2/5;
-    }
+  .badge-container img {
+    @apply mx-10;
+    max-width: 180px;
+  }
 
-    .section-top .content-img {
-        @apply text-left w-3/5;
-    }
+  .section-top .content {
+    @apply text-left w-2/5;
+  }
 
-    .section-tagline {
-        @apply text-5xl;
-    }
+  .section-top .content-img {
+    @apply text-left w-3/5;
+  }
 
-    .section-top .section-tagline {
-        @apply text-6xl;
-    }
+  .section-tagline {
+    @apply text-5xl;
+  }
+
+  .section-top .section-tagline {
+    @apply text-6xl;
+  }
 }
 
 body {
-    font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
 }

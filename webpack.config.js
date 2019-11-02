@@ -85,6 +85,7 @@ module.exports = {
             content: 'https://wellness.oliviabioni.com/'
           },
           description: {
+            name: 'Description',
             property: 'og:description',
             content: "Hi, I'm Olivia. I invite you to experience the joyful intersection of breath & movement in my group & private classes."
           },

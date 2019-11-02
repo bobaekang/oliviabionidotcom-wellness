@@ -76,7 +76,7 @@
 }
 
 .footer {
-  @apply flex flex-wrap justify-center content-center mx-auto px-6;
+  @apply flex flex-wrap justify-center content-center mx-auto px-6 py-3 text-center text-gray-700;
   min-height: 80px;
 }
 

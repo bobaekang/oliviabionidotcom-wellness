@@ -91,7 +91,7 @@ module.exports = {
           },
           image: {
             property: 'og:image',
-            content: '/assets/images/image-top.jpg'
+            content: 'https://wellness.oliviabioni.com/assets/images/image-top.jpg'
           }
         }
     }),

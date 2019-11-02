@@ -3,6 +3,7 @@ const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -101,6 +102,12 @@ module.exports = {
         path.join(__dirname, '/src/**/*.html'),
         path.join(__dirname, '/src/*.js')
       ])
-    })   
+    }),
+    new CopyPlugin([
+      {
+        from: 'public',
+        to: ''
+      }
+    ])
   ]
 }

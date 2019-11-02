@@ -77,6 +77,20 @@ module.exports = {
           removeScriptTypeAttributes: true,
           removeStyleLinkTypeAttributes: true,
           useShortDoctype: true
+        },
+        meta: {
+          url: {
+            property: 'og:url',
+            content: 'https://wellness.oliviabioni.com/'
+          },
+          description: {
+            property: 'og:description',
+            content: "Hi, I'm Olivia. I invite you to experience the joyful intersection of breath & movement in my group & private classes."
+          },
+          image: {
+            property: 'og:image',
+            content: '/assets/images/image-top.jpg'
+          }
         }
     }),
     new MiniCssExtractPlugin({

@@ -87,7 +87,7 @@ module.exports = {
           description: {
             name: 'Description',
             property: 'og:description',
-            content: "Hi, I'm Olivia. Join my private or group Pilates & yoga classes in Chicago."
+            content: "Hi, I'm Olivia. Join my private or group Pilates & yoga classes in Chicago. Learn more about me & my teaching here at my Olivia Bioni Wellness homepage."
           },
           image: {
             property: 'og:image',

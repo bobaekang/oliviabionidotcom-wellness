@@ -19,6 +19,7 @@
 
 .btn {
   @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
+  transition: 0.5s;
 }
 
 #contact .btn {

@@ -89,7 +89,7 @@
 }
 
 .header-fixed {
-  @apply bg-white fixed shadow w-full py-2 z-50;
+  @apply bg-white fixed shadow-sm w-full py-2 z-50;
   top: 0;
   transition: top 0.2s ease-in-out;
 }

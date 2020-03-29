@@ -119,7 +119,7 @@
 }
 
 .section .content img {
-  @apply mx-auto;
+  @apply mx-auto rounded-lg;
 }
 
 .section-badge {

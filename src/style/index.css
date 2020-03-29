@@ -140,7 +140,7 @@
 }
 
 .section-tagline {
-  @apply font-light leading-tight pb-4 text-3xl;
+  @apply font-light leading-tight pb-4 text-3xl tracking-wide;
   color: var(--color-primary-dark);
 }
 

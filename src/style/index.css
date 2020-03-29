@@ -51,7 +51,7 @@
 }
 
 .card {
-  @apply w-full border border-gray-300 text-center m-4;
+  @apply w-full border border-gray-300 rounded-lg text-center m-4;
   max-width: 300px;
   min-height: 300px;
   transition: transform 0.5s, box-shadow 0.5s;

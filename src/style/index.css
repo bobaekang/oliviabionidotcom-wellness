@@ -82,7 +82,7 @@
 }
 
 .header {
-  @apply flex flex-wrap justify-center items-center;
+  @apply absolute flex flex-wrap justify-center items-center py-2 w-full;
 }
 
 .header img {
@@ -90,7 +90,7 @@
 }
 
 .header-fixed {
-  @apply bg-white fixed shadow-sm w-full py-2 z-50;
+  @apply bg-white fixed shadow-sm w-full z-50;
   top: 0;
   transition: top 0.2s ease-in-out;
 }
@@ -146,15 +146,26 @@
 }
 
 .section-top {
-  min-height: 720px;
+  @apply flex content-end w-full;
+  background-image: url(../assets/images/image-top.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 75%;
+  margin-bottom: 5vh;
+  min-height: 85vh;
+}
+
+.section-top .content {
+  @apply mx-auto;
+  max-width: 300px;
+}
+
+.section-top .section-tagline {
+  @apply font-bold leading-none;
 }
 
 .section-top .section-tagline {
   @apply text-4xl;
-}
-
-.section-top .btn {
-  @apply mx-auto;
 }
 
 @tailwind utilities;
@@ -168,6 +179,23 @@
   .section {
     @apply py-20;
   }
+
+  .section-top {
+    @apply justify-end;
+  }
+
+  .section-top .content {
+    @apply mx-0;
+    max-width: none;
+  }
+
+  .section-top .section-tagline {
+    @apply text-5xl;
+  }
+
+  .section-top .content {
+    @apply mt-8 text-right w-1/2;
+  }
 }
 
 @screen md {
@@ -180,7 +208,7 @@
   }
 
   .header img {
-    height: 120px;
+    height: 75px;
   }
 
   .header-fixed img {
@@ -216,11 +244,7 @@
   }
 
   .section-top .content {
-    @apply text-center w-full my-2;
-  }
-
-  .section-top .section-tagline {
-    @apply text-5xl;
+    @apply text-right;
   }
 
   .section-top .section-blurb {
@@ -232,14 +256,6 @@
   .badge-container img {
     @apply mx-10;
     max-width: 180px;
-  }
-
-  .section-top .content {
-    @apply text-left w-2/5;
-  }
-
-  .section-top .content-img {
-    @apply text-left w-3/5;
   }
 
   .section-tagline {

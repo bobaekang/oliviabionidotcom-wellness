@@ -161,11 +161,7 @@
 }
 
 .section-top .section-tagline {
-  @apply font-bold leading-none;
-}
-
-.section-top .section-tagline {
-  @apply text-4xl;
+  @apply font-bold leading-none text-4xl;
 }
 
 @tailwind utilities;
@@ -185,16 +181,12 @@
   }
 
   .section-top .content {
-    @apply mx-0;
+    @apply mx-0 mt-8 text-right w-1/2;
     max-width: none;
   }
 
   .section-top .section-tagline {
     @apply text-5xl;
-  }
-
-  .section-top .content {
-    @apply mt-8 text-right w-1/2;
   }
 }
 

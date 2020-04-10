@@ -262,6 +262,10 @@
     @apply text-5xl;
   }
 
+  .section-top .content {
+    max-width: 600px;
+  }
+
   .section-top .section-tagline {
     @apply text-6xl;
   }

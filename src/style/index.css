@@ -162,11 +162,13 @@
 
 .section-top .section-tagline {
   @apply font-bold leading-none text-4xl;
-  animation: emergeUp 1s ease;
+  animation: emergeUp 1s ease 0.5s forwards;
+  opacity: 0;
 }
 
 .section-top .section-blurb {
-  animation: emergeUp 0.5s ease;
+  animation: emergeUp 0.5s ease 0.5s forwards;
+  opacity: 0;
 }
 
 @keyframes emergeUp {

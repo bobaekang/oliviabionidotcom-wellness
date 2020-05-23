@@ -3,7 +3,7 @@ const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -13,16 +13,14 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-      contentBase: './public'
+    contentBase: './public'
   },
   module: {
-    rules: [ 
+    rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: [
-          /node_modules/
-        ]
+        exclude: [/node_modules/]
       },
       {
         test: /\.css$/i,
@@ -38,13 +36,10 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               indent: 'postcss',
-              plugins: [
-                require('tailwindcss'),
-                require('autoprefixer')
-              ]
+              plugins: [require('tailwindcss'), require('autoprefixer')]
             }
-          },
-        ],
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -68,36 +63,38 @@ module.exports = {
       }
     ]
   },
-  plugins: [ 
+  plugins: [
     new HtmlWebpackPlugin({
-        template: path.join(__dirname, '/src/index.html'),
-        inject: 'body',
-        minify: {
-          collapseWhitespace: true,
-          removeComments: true,
-          removeRedundantAttributes: true,
-          removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          useShortDoctype: true
+      template: path.join(__dirname, '/src/index.html'),
+      inject: 'body',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      },
+      meta: {
+        url: {
+          property: 'og:url',
+          content: 'https://wellness.oliviabioni.com/'
         },
-        meta: {
-          url: {
-            property: 'og:url',
-            content: 'https://wellness.oliviabioni.com/'
-          },
-          description: {
-            name: 'Description',
-            property: 'og:description',
-            content: "Hi, I'm Olivia. Join my private or group Pilates & yoga classes in Chicago. Learn more about me & my teaching here at my Olivia Bioni Wellness homepage."
-          },
-          image: {
-            property: 'og:image',
-            content: 'https://wellness.oliviabioni.com/assets/images/image-top.jpg'
-          }
+        description: {
+          name: 'Description',
+          property: 'og:description',
+          content:
+            "Hi, I'm Olivia. Join my private or group Pilates & yoga classes in Chicago. Learn more about me & my teaching here at my Olivia Bioni Wellness homepage."
+        },
+        image: {
+          property: 'og:image',
+          content:
+            'https://wellness.oliviabioni.com/assets/images/image-top.jpg'
         }
+      }
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css'
     }),
     new PurgecssPlugin({
       paths: glob.sync([
@@ -105,11 +102,8 @@ module.exports = {
         path.join(__dirname, '/src/*.js')
       ])
     }),
-    new CopyPlugin([
-      {
-        from: 'public',
-        to: ''
-      }
-    ])
+    new CopyPlugin({
+      patterns: [{ from: 'public', to: '' }]
+    })
   ]
 }

@@ -9,7 +9,7 @@
 @tailwind components;
 
 .badge-container {
-  @apply flex flex-wrap w-full items-center justify-center mx-auto;
+  @apply flex flex-wrap w-full items-center justify-center mx-auto pt-16;
 }
 
 .badge-container img {
@@ -140,6 +140,32 @@
   background-color: var(--color-primary);
 }
 
+.section-podcast {
+  background-color: var(--color-primary);
+}
+
+.section-podcast .section-tagline {
+  @apply text-white text-center text-base font-normal mx-6;
+}
+
+.section-podcast picture {
+  @apply relative m-4;
+  max-width: 250px;
+}
+
+.section-podcast img {
+  @apply rounded-lg;
+}
+
+.section-podcast picture .overlay {
+  @apply absolute inset-0 bg-white opacity-0 rounded-lg h-full w-full;
+  transition: 0.5s ease;
+}
+
+.section-podcast picture:hover .overlay {
+  @apply opacity-25;
+}
+
 .section-tagline {
   @apply font-light leading-tight pb-4 text-3xl tracking-wide;
   color: var(--color-primary-dark);
@@ -151,7 +177,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 75%;
-  margin-bottom: 5vh;
+  padding-bottom: 5vh;
   min-height: 85vh;
 }
 
@@ -192,6 +218,10 @@
 
   .section {
     @apply py-20;
+  }
+
+  .section-podcast .section-tagline {
+    @apply text-left;
   }
 
   .section-top {

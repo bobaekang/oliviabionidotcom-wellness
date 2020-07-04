@@ -15,34 +15,34 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
-'use strict';
+'use strict'
 
 // polyfill (modified)
 function polyfill() {
   // aliases
-  var w = window;
+  var w = window
 
   // return if scroll behavior is supported and polyfill is not forced
   if (
     'scrollBehavior' in document.documentElement.style &&
     w.__forceSmoothScrollPolyfill__ !== true
   ) {
-    return;
+    return
   }
 
   // globals
-  var SCROLL_TIME = 468;
+  var SCROLL_TIME = 468
 
   // object gathering original scroll methods
   var original = {
-    scroll: w.scroll || w.scrollTo
-  };
+    scroll: w.scroll || w.scrollTo,
+  }
 
   // define timing method
   var now =
     w.performance && w.performance.now
       ? w.performance.now.bind(w.performance)
-      : Date.now;
+      : Date.now
 
   /**
    * returns result of applying ease math function to a number
@@ -51,7 +51,7 @@ function polyfill() {
    * @returns {Number}
    */
   function ease(k) {
-    return 0.5 * (1 - Math.cos(Math.PI * k));
+    return 0.5 * (1 - Math.cos(Math.PI * k))
   }
 
   /**
@@ -61,31 +61,31 @@ function polyfill() {
    * @returns {undefined}
    */
   function step(context) {
-    var time = now();
-    var elapsed = (time - context.startTime) / SCROLL_TIME;
-    var value = ease(elapsed > 1 ? 1 : elapsed);
-    var currentX = context.startX + (context.x - context.startX) * value;
-    var currentY = context.startY + (context.y - context.startY) * value;
+    var time = now()
+    var elapsed = (time - context.startTime) / SCROLL_TIME
+    var value = ease(elapsed > 1 ? 1 : elapsed)
+    var currentX = context.startX + (context.x - context.startX) * value
+    var currentY = context.startY + (context.y - context.startY) * value
 
-    original.scroll.call(w, currentX, currentY);
+    original.scroll.call(w, currentX, currentY)
 
     // scroll more if we have not reached our destination
     if (currentX !== context.x || currentY !== context.y) {
-      w.requestAnimationFrame(step.bind(w, context));
+      w.requestAnimationFrame(step.bind(w, context))
     }
   }
 
   // ORIGINAL METHODS OVERRIDES
   // w.scroll and w.scrollTo
-  w.scroll = w.scrollTo = function() {
+  w.scroll = w.scrollTo = function () {
     step({
       startTime: now(),
       startX: w.scrollX || w.pageXOffset,
       startY: w.scrollY || w.pageYOffset,
       x: arguments[0].left,
-      y: arguments[0].top
-    });
-  };
+      y: arguments[0].top,
+    })
+  }
 }
 
-module.exports = { polyfill: polyfill };
+module.exports = { polyfill: polyfill }

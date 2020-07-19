@@ -197,10 +197,6 @@
   max-width: 300px;
 }
 
-.section-top .section-tagline {
-  @apply font-bold leading-none text-4xl;
-}
-
 @tailwind utilities;
 
 @screen sm {
@@ -223,10 +219,6 @@
 
   .section-top .content {
     @apply max-w-none mx-0 mt-8 text-right w-1/2;
-  }
-
-  .section-top .section-tagline {
-    @apply text-5xl;
   }
 }
 
@@ -296,10 +288,6 @@
 
   .section-top .content {
     max-width: 600px;
-  }
-
-  .section-top .section-tagline {
-    @apply text-6xl;
   }
 }
 

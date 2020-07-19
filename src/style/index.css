@@ -9,8 +9,8 @@
 @tailwind components;
 
 .animation-emerge-up {
+  @apply opacity-0;
   animation: emergeUp 0.5s ease 0.5s forwards;
-  opacity: 0;
 }
 
 @keyframes emergeUp {
@@ -34,8 +34,7 @@
 }
 
 .btn {
-  @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4;
-  transition: 0.5s;
+  @apply inline-block font-bold tracking-wider leading-none rounded-full px-5 py-4 my-4 transition duration-500;
 }
 
 #contact .btn {
@@ -106,9 +105,8 @@
 }
 
 .header-fixed {
-  @apply bg-white fixed shadow-sm w-full z-50;
-  top: 0;
-  transition: top 0.2s ease-in-out;
+  @apply bg-white fixed top-0 shadow-sm w-full z-50 transition duration-200 ease-in-out;
+  transition-property: top;
 }
 
 .header-fixed img {
@@ -116,10 +114,8 @@
 }
 
 .header-fixed .btn {
-  @apply mx-2 my-0 px-2 py-3;
+  @apply fixed right-0 mx-2 my-0 px-2 py-3;
   font-size: 0.6em;
-  position: fixed;
-  right: 0;
 }
 
 .header-hide {
@@ -140,8 +136,8 @@
 }
 
 .section-badge {
+  @apply min-h-0;
   padding: 0 !important;
-  min-height: 0;
 }
 
 .section-blurb {
@@ -174,8 +170,7 @@
 }
 
 .section-podcast picture .overlay {
-  @apply absolute inset-0 bg-white opacity-0 rounded-lg h-full w-full;
-  transition: 0.5s ease;
+  @apply absolute inset-0 bg-white opacity-0 rounded-lg h-full w-full transition duration-500;
 }
 
 .section-podcast picture:hover .overlay {
@@ -227,8 +222,7 @@
   }
 
   .section-top .content {
-    @apply mx-0 mt-8 text-right w-1/2;
-    max-width: none;
+    @apply max-w-none mx-0 mt-8 text-right w-1/2;
   }
 
   .section-top .section-tagline {

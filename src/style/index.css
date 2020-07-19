@@ -8,6 +8,22 @@
 
 @tailwind components;
 
+.animation-emerge-up {
+  animation: emergeUp 0.5s ease 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes emergeUp {
+  0% {
+    transform: translateY(1em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .badge-container {
   @apply flex flex-wrap w-full items-center justify-center mx-auto pt-16;
 }
@@ -188,24 +204,6 @@
 
 .section-top .section-tagline {
   @apply font-bold leading-none text-4xl;
-  animation: emergeUp 1s ease 0.5s forwards;
-  opacity: 0;
-}
-
-.section-top .section-blurb {
-  animation: emergeUp 0.5s ease 0.5s forwards;
-  opacity: 0;
-}
-
-@keyframes emergeUp {
-  0% {
-    transform: translateY(1em);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 @tailwind utilities;

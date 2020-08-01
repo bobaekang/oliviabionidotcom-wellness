@@ -144,10 +144,6 @@
   @apply font-light pb-4 text-gray-700 text-lg;
 }
 
-.section-classes {
-  @apply block text-center;
-}
-
 .section-contact {
   background-color: var(--color-primary);
 }

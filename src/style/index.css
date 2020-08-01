@@ -135,7 +135,7 @@
   @apply mx-auto rounded-lg;
 }
 
-.section-badge {
+.badge {
   @apply min-h-0;
   padding: 0 !important;
 }
@@ -249,14 +249,6 @@
 
   .section-blurb {
     @apply text-xl;
-  }
-
-  .section-group {
-    @apply flex-row-reverse;
-  }
-
-  .section-group .content {
-    @apply text-right;
   }
 
   .section-tagline {

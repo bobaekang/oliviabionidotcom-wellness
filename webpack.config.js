@@ -1,8 +1,6 @@
 const path = require('path')
-const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PurgecssPlugin = require('purgecss-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
@@ -10,17 +8,17 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   devServer: {
-    contentBase: './public'
+    contentBase: './public',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: [/node_modules/]
+        exclude: [/node_modules/],
       },
       {
         test: /\.css$/i,
@@ -29,26 +27,20 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
-          {
-            loader: 'postcss-loader',
-            options: {
-              indent: 'postcss',
-              plugins: [require('tailwindcss'), require('autoprefixer')]
-            }
-          }
-        ]
+          'postcss-loader',
+        ],
       },
       {
         test: /\.html$/,
         use: {
           loader: 'html-loader',
           options: {
-            interpolate: true
-          }
-        }
+            interpolate: true,
+          },
+        },
       },
       {
         test: /\.(ico|gif|png|jpe?g|svg)$/,
@@ -57,11 +49,11 @@ module.exports = {
           options: {
             name: '[path][name].[ext]',
             context: './src',
-            esModule: false
-          }
-        }
-      }
-    ]
+            esModule: false,
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -73,37 +65,31 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
+        useShortDoctype: true,
       },
       meta: {
         url: {
           property: 'og:url',
-          content: 'https://wellness.oliviabioni.com/'
+          content: 'https://wellness.oliviabioni.com/',
         },
         description: {
           name: 'Description',
           property: 'og:description',
           content:
-            "Hi, I'm Olivia. Join my private or group Pilates & yoga classes in Chicago. Learn more about me & my teaching here at my Olivia Bioni Wellness homepage."
+            "Hi, I'm Olivia. Join my private or group Pilates & yoga classes in Chicago. Learn more about me & my teaching here at my Olivia Bioni Wellness homepage.",
         },
         image: {
           property: 'og:image',
           content:
-            'https://wellness.oliviabioni.com/assets/images/image-top.jpg'
-        }
-      }
+            'https://wellness.oliviabioni.com/assets/images/image-top.jpg',
+        },
+      },
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
-    new PurgecssPlugin({
-      paths: glob.sync([
-        path.join(__dirname, '/src/**/*.html'),
-        path.join(__dirname, '/src/*.js')
-      ])
+      filename: '[name].css',
     }),
     new CopyPlugin({
-      patterns: [{ from: 'public', to: '' }]
-    })
-  ]
+      patterns: [{ from: 'public', to: '' }],
+    }),
+  ],
 }

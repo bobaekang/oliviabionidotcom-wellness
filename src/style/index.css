@@ -166,11 +166,11 @@
 }
 
 .section-podcast picture .overlay {
-  @apply absolute inset-0 bg-white opacity-0 rounded-lg h-full w-full transition duration-500;
+  @apply absolute inset-0 bg-opacity-0 rounded-lg h-full w-full transition duration-500;
 }
 
 .section-podcast picture:hover .overlay {
-  @apply opacity-25;
+  @apply bg-opacity-25;
 }
 
 .section-tagline {

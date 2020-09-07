@@ -4,7 +4,12 @@ module.exports = {
     content: ['./src/**/*.html'],
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'podcast-psm': '#ff8a78',
+        'podcast-ptm': '#97c3e0',
+      },
+    },
   },
   variants: {},
   plugins: [],

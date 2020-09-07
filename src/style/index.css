@@ -170,7 +170,7 @@
 }
 
 .section-podcast picture:hover .overlay {
-  @apply bg-opacity-25 opacity-100;
+  @apply bg-opacity-100 opacity-100;
 }
 
 .section-tagline {

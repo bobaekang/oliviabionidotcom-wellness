@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "serve": "webpack serve --history-api-fallback --inline --progress",
+    "serve": "webpack serve --mode development --history-api-fallback --inline --progress",
     "build": "webpack --mode production"
   },
   "repository": {

@@ -11,7 +11,11 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    contentBase: './public',
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
   },
   module: {
     rules: [

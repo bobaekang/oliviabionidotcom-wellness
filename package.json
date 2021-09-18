@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "serve": "webpack serve --mode development --history-api-fallback --inline --progress",
+    "serve": "webpack serve --mode development --history-api-fallback --client-progress",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -35,7 +35,7 @@
     "tailwindcss": "^2.2.15",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^4.2.1"
   },
   "dependencies": {}
 }

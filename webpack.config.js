@@ -20,6 +20,10 @@ module.exports = {
   module: {
     rules: [
       {
+        scheme: 'data',
+        type: 'asset/resource',
+      },
+      {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: [/node_modules/],
@@ -56,6 +60,7 @@ module.exports = {
             esModule: false,
           },
         },
+        type: 'javascript/auto',
       },
     ],
   },

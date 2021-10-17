@@ -88,4 +88,4 @@ function polyfill() {
   }
 }
 
-module.exports = { polyfill: polyfill }
+polyfill()

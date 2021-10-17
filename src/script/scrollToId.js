@@ -1,7 +1,5 @@
 'use strict'
 
-require('./smoothScroll').polyfill()
-
 window.scrollToId = function (id) {
   var rect = document.getElementById(id).getBoundingClientRect()
   window.scrollTo({
